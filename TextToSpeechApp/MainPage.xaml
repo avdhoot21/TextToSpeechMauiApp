@@ -28,6 +28,10 @@
                     Text="Play" 
                     Clicked="OnTtsButtonClicked" 
                     SemanticProperties.Hint="Controls text-to-speech playback" />
+            <Button x:Name="VideoButton" 
+                    Text="Create Video" 
+                    Clicked="OnVideoButtonClicked" 
+                    SemanticProperties.Hint="Generates a video from the webpage text" />
             <Label x:Name="TtsStatusLabel" 
                    Text="Stopped" 
                    VerticalOptions="Center" />
