@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TextToSpeechApp.MainPage">
+
+    <Grid RowDefinitions="Auto,*,Auto,Auto" Padding="10">
+        <Label Grid.Row="0" 
+               Text="Webpage Reader with Text-to-Speech" 
+               SemanticProperties.HeadingLevel="Level1" 
+               FontSize="24" 
+               HorizontalOptions="Center" />
+
+        <WebView Grid.Row="1" 
+                 x:Name="WebView" 
+                 Source="https://example.com" 
+                 VerticalOptions="FillAndExpand" />
+
+        <HorizontalStackLayout Grid.Row="2" Spacing="10">
+            <Label Text="Select Language:" VerticalOptions="Center" />
+            <Picker x:Name="LanguagePicker" 
+                    Title="Available Languages" 
+                    WidthRequest="200" 
+                    SelectedIndexChanged="OnLanguageSelected" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Grid.Row="3" Spacing="10">
+            <Button x:Name="TtsButton" 
+                    Text="Play" 
+                    Clicked="OnTtsButtonClicked" 
+                    SemanticProperties.Hint="Controls text-to-speech playback" />
+            <Label x:Name="TtsStatusLabel" 
+                   Text="Stopped" 
+                   VerticalOptions="Center" />
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>
